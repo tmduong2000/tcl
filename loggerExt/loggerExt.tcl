@@ -404,7 +404,7 @@ proc ::loggerExt::_getProcBody {params {bodyType regular}} {
 #    and will support other ERROR CODE later
 #
 proc ::loggerExt::_genError {msg} {
-    if {[string match {invalid command name "::logger::tree*} $msg]} {
+    if {[string match "invalid command name \"::logger::tree*" $msg]} {
         set code "NO_LOGGER_SERVICE"
     } elseif { [string match {can not find channel named*} $msg] } {
         set code "INVALID_CHANNEL"
